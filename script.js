@@ -350,7 +350,7 @@ document.querySelector('.btn_finalizar').addEventListener('click', () => {
   mensaje += `Pago: ${metodoPago}\n`;
   mensaje += `Verifique que esté dentro de la zona habilitada`;
 
-  const tel = "3482701932";
+  const tel = "5493425995955";
   window.open(`https://wa.me/${tel}?text=${encodeURIComponent(mensaje)}`, "_blank");
 });
 
