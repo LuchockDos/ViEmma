@@ -259,7 +259,6 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* ---------- Contenedor principal ---------- */
 .modal_content {
   width: 60%;
   height: 60%;
@@ -272,7 +271,6 @@ body {
   position: relative;
 }
 
-/* ---------- Lado izquierdo (imagen) ---------- */
 .modal_left {
   width: 50%;
   padding: 5px;
@@ -281,18 +279,17 @@ body {
   justify-content: center;
   align-items: center;
   background-position: center;
-  background-size: contain; /* ⚡ ajusta la imagen sin cortarla */
+  background-size: contain; 
   background-repeat: no-repeat;
 }
 
 .modal_img {
   width: 100%;
-  height: 99%; /* se adapta al ancho, sin deformar */
+  height: 99%; 
   border-radius: 20px;
   display: block;
 }
 
-/* ---------- Lado derecho (contenido) ---------- */
 .modal_right {
   width: 50%;
   display: flex;
@@ -310,7 +307,6 @@ body {
   color: #c5a253;
 }
 
-/* ---------- Opciones de precios ---------- */
 .modal_prices {
   display: flex;
   flex-direction: column;
@@ -334,7 +330,6 @@ body {
   margin-right: 6px;
 }
 
-/* ---------- Input de detalles ---------- */
 .details {
   width: 100%;
   padding: 8px;
@@ -351,7 +346,6 @@ body {
   color: #aaa;
 }
 
-/* ---------- Cerrar ---------- */
 .modal_close {
   position: absolute;
   top: 8px;
@@ -365,10 +359,7 @@ body {
 .modal.show {
   display: flex;
 }
-/* ================= MODAL DEL CARRITO ================= */
 
-
-/* === CONTENIDO PRINCIPAL === */
 .modal_carrito_content {
   width: 50%;
   height: 70%;
@@ -384,7 +375,6 @@ body {
   border: 1px solid #C5A253;
 }
 
-/* === HEADER === */
 .modal_carrito_header {
   display: flex;
   justify-content: space-between;
@@ -412,7 +402,6 @@ body {
   transform: scale(1.2);
 }
 
-/* === BODY (LISTA DE PRODUCTOS) === */
 .modal_carrito_body {
   display: flex;
   flex-direction: column;
@@ -466,7 +455,6 @@ body {
   cursor: pointer;
 }
 
-/* === FOOTER === */
 .modal_carrito_footer {
   border-top: 1px solid #333;
   padding-top: 12px;
@@ -475,7 +463,6 @@ body {
   gap: 12px;
 }
 
-/* --- Formulario método de pago --- */
 .modal_pago_form {
   display: flex;
   align-items: center;
@@ -513,7 +500,7 @@ body {
 {
   color: #C5A253;
 }
-/* --- Total y botón --- */
+
 .modal_total {
   font-size: 18px;
   font-weight: 600;
