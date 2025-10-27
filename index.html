@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header_container">
+      <nav class="navigation">
+        <ul class="ul_nav">
+          <li>
+            <a class="btn_nav" href="#products_hamburguesas">Hamburguesas</a>
+          </li>
+          <li>
+            <a class="btn_nav" href="#products_pizzas">Pizzas</a>
+          </li>
+          <li>
+            <a class="btn_nav" href="#products_empanadas">Empanadas</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="cart_icon_container" id="openCarrito">
+        <span class="cart_badge" id="cartBadge">0</span>
+        <ion-icon name="cart-outline" class="cart_icon"></ion-icon>
+      </div>
+    </header>
+    <main class="main_container" id="containerProducts">
+      <article class="article_info_viemma">
+        <div class="logo_title">
+          <img class="logo" src="assets/logo.webp" alt="" />
+          <h2 class="h2_global">📍Santa Fe, Capital</h2>
+          ;
+        </div>
+        <div class="info_container">
+          <p class="schedule">
+            🕛 Abrimos los Viernes, Sábados y Domingos de 20:30 a 23:00
+          </p>
+          <div class="shipping">
+            <span class="envio">🏍️ Envío $2000</span>
+            <div class="payments">
+              <span class="money">💵 Efectivo</span>
+              <span class="money">💳 Transferencia</span>
+            </div>
+          </div>
+          <div class="instagram">
+            <ion-icon class="logo_instagram" name="logo-instagram"></ion-icon>
+            <a
+              class="ig"
+              href="https://www.instagram.com/viemmafood"
+              target="_blank"
+              >Instagram</a
+            >
+          </div>
+        </div>
+      </article>
+      <article class="article_aviso">
+        <h2 class="zona_aviso" id="zona">
+          🚨 Solo realizamos envíos dentro de la zona marcada en el siguiente
+          mapa.
+        </h2>
+        <!-- 🗺️ MAPA DE LA ZONA DE ENTREGA -->
+        <div class="zona_mapa_container">
+          <iframe
+            src="https://www.google.com/maps/d/embed?mid=1yx0M3hjvhFeldpO-MuAnuYP2qfSijFc&hl=es"
+            allowfullscreen
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </article>
+      <section class="section_products" id="section_products"></section>
+    </main>
+    <footer class="footer_container"></footer>
+
+    <!-- 🔹 MODAL PRODUCTO -->
+    <div class="modal" id="modalProducto">
+      <div class="modal_content">
+        <div class="modal_left">
+          <img
+            class="modal_img"
+            id="modal_img"
+            src=""
+            alt="Producto seleccionado"
+          />
+        </div>
+        <div class="modal_right">
+          <h2 class="modal_title" id="modal_title"></h2>
+          <form class="modal_prices">
+            <label class="modal_label">
+              <input type="radio" name="precio" value="8000" />
+            </label>
+            <label class="modal_label">
+              <input type="radio" name="precio" value="11000" />
+            </label>
+            <label class="modal_label">
+              <input type="radio" name="precio" value="14000" />
+            </label>
+            <label for="details">
+              <input class="details" type="text" />
+            </label>
+          </form>
+          <button class="btn_add_cart">Agregar al carrito</button>
+        </div>
+        <span class="modal_close">&times;</span>
+      </div>
+    </div>
+    <!-- ================= MODAL CARRITO ================= -->
+    <div class="modal" id="modalCarrito">
+      <div class="modal_content modal_carrito_content">
+        <!-- 🔹 Header -->
+        <div class="modal_carrito_header">
+          <h2 class="modal_title">Tu pedido</h2>
+          <button class="modal_close" id="closeCarrito">&times;</button>
+        </div>
+
+        <!-- 🔹 Body -->
+        <div class="modal_carrito_body" id="carritoItems">
+          <!-- Aquí se cargan los productos del carrito dinámicamente -->
+        </div>
+
+        <!-- 🔹 Footer -->
+        <div class="modal_carrito_footer">
+          <form class="modal_envio_form">
+            <p class="modal_label">Dirección de entrega:</p>
+            <input
+              type="text"
+              id="direccionEnvio"
+              class="details"
+              placeholder="Ej: San Jerónimo 2840"
+            />
+          </form>
+
+          <!-- 🧾 Método de pago -->
+          <form class="modal_pago_form">
+            <p class="modal_label">Método de pago:</p>
+            <label class="modal_radio_label">
+              <input type="radio" name="metodo_pago" value="efectivo" checked />
+              Efectivo
+            </label>
+            <label class="modal_radio_label">
+              <input type="radio" name="metodo_pago" value="transferencia" />
+              Transferencia
+            </label>
+          </form>
+
+          <!-- 💰 Total -->
+          <p class="modal_total">Total: <span id="totalCarrito">$0</span></p>
+
+          <!-- 🟡 Botón de finalizar -->
+          <div class="verificar_zona">
+            <p>
+              Asegúrese de que su dirección esté dentro de la zona habilitada
+              para entregas. ¡Muchas gracias!
+            </p>
+            <a class="verify" id="verify" href="#zona">Verificar Zona</a>
+          </div>
+          <button class="btn_finalizar">Finalizar pedido</button>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
