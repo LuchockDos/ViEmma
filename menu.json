@@ -216,6 +216,15 @@
           "precioMediaDocena": 13000,
           "precioDocena": 24000,
           "imagen": "assets/empanadas.webp"
+        },
+        {
+          "id": 112,
+          "nombre": "Bondiola a la barbacoa",
+          "descripcion": "",
+          "precio": 2500,
+          "precioMediaDocena": 13000,
+          "precioDocena": 24000,
+          "imagen": "assets/empanadas.webp"
         }
       ]
     },
@@ -281,7 +290,7 @@
         },
         {
           "id": 209,
-          "nombre": "Parmesana y rúcula",
+          "nombre": "Parmesano y rúcula",
           "descripcion": "",
           "precio": 20000,
           "imagen": "assets/pizza.webp"
