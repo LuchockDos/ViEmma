@@ -67,24 +67,34 @@ function renderProductos() {
       card.append(img, h3, desc);
 
       if (categoria === 'Empanadas') {
-        const input = document.createElement('input');
-        input.type = "number";
-        input.min = 0;
-        input.value = 0;
-        input.classList.add("details");
-        card.appendChild(input);
 
-        const btn = document.createElement('button');
-        btn.classList.add("btn_add_cart");
-        btn.textContent = "Agregar";
-        btn.addEventListener("click", () => {
-          const qty = parseInt(input.value);
-          if (qty > 0) {
-            agregarEmpanadas(producto, qty);
-            input.value = 0;
-          }
-        });
-        card.appendChild(btn);
+        if (producto.cantidadFija) {
+          const btn = document.createElement('button');
+          btn.classList.add("btn_add_cart");
+          btn.textContent = "Ver Detalle";
+          btn.addEventListener("click", () => abrirModal(producto, categoria));
+          card.appendChild(btn);
+
+        } else {
+          const input = document.createElement('input');
+          input.type = "number";
+          input.min = 0;
+          input.value = 0;
+          input.classList.add("details");
+          card.appendChild(input);
+
+          const btn = document.createElement('button');
+          btn.classList.add("btn_add_cart");
+          btn.textContent = "Agregar";
+          btn.addEventListener("click", () => {
+            const qty = parseInt(input.value);
+            if (qty > 0) {
+              agregarEmpanadas(producto, qty);
+              input.value = 0;
+            }
+          });
+          card.appendChild(btn);
+        }
 
       } else {
         const btn = document.createElement('button');
@@ -119,43 +129,79 @@ function abrirModal(producto, categoria) {
   modalTitle.textContent = producto.nombre;
   modalPrices.innerHTML = '';
 
+  if (categoria === 'Empanadas') {
+    if (producto.cantidadFija) {
+      mostrarOpcionesComboEmpanadas(producto);
+    } else {
+      mostrarOpcionesEmpanadasUnidad(producto);
+    }
+  }
+
   if (categoria === 'Hamburguesas') mostrarOpcionesHamburguesa(producto);
-  if (categoria === 'Empanadas') mostrarOpcionesEmpanadas(producto);
   if (categoria === 'Pizzas') mostrarOpcionesPizza(producto);
 
   btnAddCart.onclick = () => {
-    const selected = document.querySelector('input[name="precio"]:checked');
-    const details = document.getElementById('details')?.value.trim() || '';
-    let precioFinal = 0;
-    let cantidad = 1;
-    let tipo = "";
+    const detalles = document.getElementById('details')?.value.trim() || '';
 
-    if (categoria === 'Empanadas') {
-      const cantidadInput = document.getElementById("cantidadUnidades");
-      const cant = parseInt(cantidadInput?.value) || 0;
+    if (categoria === 'Empanadas' && producto.cantidadFija) {
+      const sabor = document.getElementById('selectGusto').value;
+      const cantidad = producto.cantidadFija;
+      const precio = producto.precio;
+      const tipo = cantidad === 12 ? "Docena" : "Media docena";
 
-      if (cant > 0) {
-        cantidad = cant;
-        precioFinal = cant * producto.__precioUnidad;
-        tipo = `x${cant}`;
-      }
-
-      if (selected) {
-        const texto = selected.parentElement.innerText.trim();
-        if (texto.includes("Media")) { cantidad = 6; tipo = "Media docena"; }
-        if (texto.includes("Docena")) { cantidad = 12; tipo = "Docena"; }
-        precioFinal = parseInt(selected.value);
-      }
-    } else {
-      if (!selected) return alert("Seleccioná una opción");
-      precioFinal = parseInt(selected.value);
+      carrito.push({ nombre: sabor, categoria, cantidad, tipo, precio, detalle: detalles });
+      actualizarCarrito();
+      actualizarBadge();
+      modal.classList.remove('show');
+      return;
     }
 
-    carrito.push({ nombre: producto.nombre, categoria, precio: precioFinal, detalle: details, cantidad, tipo });
+    const selected = document.querySelector('input[name="precio"]:checked');
+    if (!selected) return alert("Seleccioná una opción");
+
+    carrito.push({
+      nombre: producto.nombre,
+      categoria,
+      precio: parseInt(selected.value),
+      detalle: detalles,
+      cantidad: 1
+    });
+
     actualizarCarrito();
     actualizarBadge();
     modal.classList.remove('show');
   };
+}
+
+function mostrarOpcionesComboEmpanadas(producto) {
+  const gustos = Carta.find(c => c.categoria === "Empanadas").productos
+    .filter(p => !p.cantidadFija)
+    .map(p => p.nombre);
+
+  let options = gustos.map(g => `<option value="${g}">${g}</option>`).join("");
+
+  modalPrices.innerHTML = `
+    <label class="modal_label">
+      Elegí sabor:
+      <select id="selectGusto" class="details">${options}</select>
+    </label>
+  `;
+
+  agregarInputDetalles();
+}
+
+function mostrarOpcionesEmpanadasUnidad(producto) {
+  const precioU = producto.precioUnidad ?? producto.precio;
+  producto.__precioUnidad = precioU;
+
+  modalPrices.innerHTML = `
+    <label class="modal_label">
+      Cantidad:
+      <input type="number" id="cantidadUnidades" class="details" min="1" value="0">
+      $${precioU} c/u
+    </label>
+  `;
+  agregarInputDetalles();
 }
 
 function mostrarOpcionesHamburguesa(producto) {
@@ -170,28 +216,6 @@ function mostrarOpcionesHamburguesa(producto) {
       </label>`;
   });
 
-  agregarInputDetalles();
-}
-
-function mostrarOpcionesEmpanadas(producto) {
-  const precioU = producto.precioUnidad ?? producto.precio;
-  producto.__precioUnidad = precioU;
-
-  modalPrices.innerHTML = `
-    <label class="modal_label">
-      Cantidad:
-      <input type="number" id="cantidadUnidades" class="details" min="1" value="0">
-      $${precioU} c/u
-    </label>
-    <label class="modal_label">
-      <input class="modal_radio" type="radio" name="precio" value="${producto.precioMediaDocena}">
-      Media docena — $${producto.precioMediaDocena}
-    </label>
-    <label class="modal_label">
-      <input class="modal_radio" type="radio" name="precio" value="${producto.precioDocena}">
-      Docena — $${producto.precioDocena}
-    </label>
-  `;
   agregarInputDetalles();
 }
 
@@ -228,52 +252,72 @@ function actualizarCarrito() {
   carritoItems.innerHTML = '';
   totalPrecio = 0;
 
-  const emp = carrito.filter(i => i.categoria === "Empanadas");
+  const empSueltas = carrito.filter(i => i.categoria === "Empanadas" && !i.tipo);
+  const empCombo = carrito.filter(i => i.categoria === "Empanadas" && i.tipo);
   const hamb = carrito.filter(i => i.categoria === "Hamburguesas");
   const pizz = carrito.filter(i => i.categoria === "Pizzas");
 
-  let totalEmp = 0;
-  let sabores = {};
+  // ✅ Combos (Media / Docena)
+  if (empCombo.length > 0) {
+    carritoItems.innerHTML += `<strong>Empanadas - Combos</strong><br>`;
+    empCombo.forEach((i, index) => {
+      const div = document.createElement("div");
+      div.innerHTML = `
+        ${i.tipo}: ${i.nombre} — $${i.precio}
+        <button class="btn_quitar_producto" onclick="eliminarProducto(${carrito.indexOf(i)})">❌</button>
+      `;
+      carritoItems.appendChild(div);
+      totalPrecio += i.precio;
+    });
+    carritoItems.innerHTML += `<br>`;
+  }
 
-  emp.forEach(i => {
-    totalEmp += i.cantidad;
-    sabores[i.nombre] = (sabores[i.nombre] || 0) + i.cantidad;
-  });
+  // ✅ Sueltas se siguen agrupando
+  if (empSueltas.length > 0) {
+    let totalCantidad = 0;
+    let sabores = {};
 
-  if (totalEmp > 0) {
-    let precio = totalEmp >= 12 ? 24000 + (totalEmp - 12) * 2500 :
-                totalEmp >= 6  ? 13000 + (totalEmp - 6) * 2500 :
-                                 totalEmp * 2500;
+    empSueltas.forEach(i => {
+      totalCantidad += i.cantidad;
+      sabores[i.nombre] = (sabores[i.nombre] || 0) + i.cantidad;
+    });
+
+    let precio = totalCantidad >= 12 ? 24000 + (totalCantidad - 12) * 2500 :
+                totalCantidad >= 6  ? 13000 + (totalCantidad - 6) * 2500 :
+                                     totalCantidad * 2500;
 
     const div = document.createElement('div');
-    div.innerHTML = `<strong>Empanadas (${totalEmp}) — $${precio}</strong><br>` +
+    div.innerHTML = `<strong>Empanadas Sueltas (${totalCantidad}) — $${precio}</strong><br>` +
       Object.entries(sabores).map(([s, q]) =>
-        `${s} (${q}) <button class="btn_quitar_producto" onclick="eliminarEmpanada('${s}')">❌</button>`
+        `${s} (${q})
+        <button class="btn_quitar_producto" onclick="eliminarEmpanada('${s}')">❌</button>`
       ).join("<br>");
     carritoItems.appendChild(div);
 
     totalPrecio += precio;
   }
 
+  // Hamburguesas
   if (hamb.length > 0) {
     carritoItems.innerHTML += `<strong>Hamburguesas</strong><br>`;
-    hamb.forEach((i, index) => {
+    hamb.forEach(i => {
       const div = document.createElement("div");
       div.innerHTML = `
         ${i.nombre} ${i.detalle ? `— ${i.detalle}` : ""} — $${i.precio}
-        <button class="btn_quitar_producto" onclick="eliminarProducto(${index})">❌</button>`;
+        <button class="btn_quitar_producto" onclick="eliminarProducto(${carrito.indexOf(i)})">❌</button>`;
       carritoItems.appendChild(div);
       totalPrecio += i.precio;
     });
   }
 
+  // Pizzas
   if (pizz.length > 0) {
     carritoItems.innerHTML += `<strong>Pizzas</strong><br>`;
-    pizz.forEach((i, index) => {
+    pizz.forEach(i => {
       const div = document.createElement("div");
       div.innerHTML = `
         ${i.nombre} ${i.detalle ? `— ${i.detalle}` : ""} — $${i.precio}
-        <button class="btn_quitar_producto" onclick="eliminarProducto(${index})">❌</button>`;
+        <button class="btn_quitar_producto" onclick="eliminarProducto(${carrito.indexOf(i)})">❌</button>`;
       carritoItems.appendChild(div);
       totalPrecio += i.precio;
     });
@@ -347,7 +391,7 @@ document.querySelector('.btn_finalizar').addEventListener('click', () => {
 
   mensaje += `Total: $${totalPrecio}\n`;
   mensaje += `Dirección: ${direccion}\n`;
-  mensaje += `Pago: ${metodoPago}\n`;
+  mensaje += `Pago: ${metodoPago} + 2000 si quiere envio\n `;
   mensaje += `Verifique que esté dentro de la zona habilitada`;
 
   const tel = "5493425995955";
@@ -355,5 +399,5 @@ document.querySelector('.btn_finalizar').addEventListener('click', () => {
 });
 
 const verify = document.getElementById('verify').addEventListener('click', () =>{
-    modalCarrito.classList.remove('show')
-})
+  modalCarrito.classList.remove('show')
+});

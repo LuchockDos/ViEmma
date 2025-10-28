@@ -4,38 +4,16 @@
       "categoria": "Hamburguesas",
       "productos": [
         {
-          "id": 301,
-          "nombre": "Ailu",
-          "descripcion": "Pan de papa, blend de carne 120g, doble cheddar, bacon crujiente, cebolla caramelizada, lechuga, tomate, barbacoa, alioli",
+          "id": 309,
+          "nombre": "Vi",
+          "descripcion": "Pan de papa, blend de carne 120g, doble cheddar ahumado, bacon crujiente, morrón asado, cebolla crujiente, tomate, salsa ViEmma",
           "precios": {
             "simple": 8000,
             "doble": 11000,
             "triple": 14000
           },
-          "imagen": "assets/ailu.webp"
-        },
-        {
-          "id": 302,
-          "nombre": "Curtida",
-          "descripcion": "Pan de papa, blend de carne 120g, doble queso dambo, pepinillos, aros de cebolla encurtidos, lechuga, salsa ViEmma",
-          "precios": {
-            "simple": 8000,
-            "doble": 10500,
-            "triple": 13500
-          },
-          "imagen": "assets/curtida.webp"
-        },
-        {
-          "id": 303,
-          "nombre": "Dani",
-          "descripcion": "Pan de papa, blend de carne 120g, doble queso dambo, cebolla caramelizada, huevo frito, tomate, lechuga, mayonesa de morrón",
-          "precios": {
-            "simple": 8000,
-            "doble": 10500,
-            "triple": 13500
-          },
-          "imagen": "assets/dani.webp"
-        },
+          "imagen": "assets/vi.webp"
+        }, 
         {
           "id": 304,
           "nombre": "Emma",
@@ -46,39 +24,6 @@
             "triple": 13500
           },
           "imagen": "assets/emma.webp"
-        },
-        {
-          "id": 305,
-          "nombre": "Fiore",
-          "descripcion": "Pan de papa, blend de carne 120g, doble mozzarella, pepinillos, cebolla caramelizada, huevo frito, lechuga, alioli",
-          "precios": {
-            "simple": 8000,
-            "doble": 10500,
-            "triple": 13500
-          },
-          "imagen": "assets/fiore.webp"
-        },
-        {
-          "id": 306,
-          "nombre": "Mari",
-          "descripcion": "Pan de papa, blend de carne 120g, queso azul, bacon crujiente, cebolla caramelizada, rúcula, tomate, barbacoa",
-          "precios": {
-            "simple": 8000,
-            "doble": 11000,
-            "triple": 14000
-          },
-          "imagen": "assets/mari.webp"
-        },
-        {
-          "id": 307,
-          "nombre": "Nanni",
-          "descripcion": "Pan de papa, blend de carne 120g, doble cheddar ahumado, bacon crujiente, cebolla caramelizada, huevo frito, lechuga, salsa ViEmma",
-          "precios": {
-            "simple": 8000,
-            "doble": 11000,
-            "triple": 14000
-          },
-          "imagen": "assets/nani.webp"
         },
         {
           "id": 308,
@@ -92,17 +37,6 @@
           "imagen": "assets/paz.webp"
         },
         {
-          "id": 309,
-          "nombre": "Vi",
-          "descripcion": "Pan de papa, blend de carne 120g, doble cheddar ahumado, bacon crujiente, morrón asado, cebolla crujiente, tomate, salsa ViEmma",
-          "precios": {
-            "simple": 8000,
-            "doble": 11000,
-            "triple": 14000
-          },
-          "imagen": "assets/vi.webp"
-        },
-        {
           "id": 310,
           "nombre": "Zaira",
           "descripcion": "Pan de papa, blend de carne 120g, doble mozzarella, jamón, huevo frito, lechuga, tomate, mayochimi",
@@ -112,6 +46,72 @@
             "triple": 13500
           },
           "imagen": "assets/zaira.webp"
+        },
+         {
+          "id": 306,
+          "nombre": "Mari",
+          "descripcion": "Pan de papa, blend de carne 120g, queso azul, bacon crujiente, cebolla caramelizada, rúcula, tomate, barbacoa",
+          "precios": {
+            "simple": 8000,
+            "doble": 11000,
+            "triple": 14000
+          },
+          "imagen": "assets/mari.webp"
+        },
+        {
+          "id": 301,
+          "nombre": "Ailu",
+          "descripcion": "Pan de papa, blend de carne 120g, doble cheddar, bacon crujiente, cebolla caramelizada, lechuga, tomate, barbacoa, alioli",
+          "precios": {
+            "simple": 8000,
+            "doble": 11000,
+            "triple": 14000
+          },
+          "imagen": "assets/ailu.webp"
+        },
+         {
+          "id": 307,
+          "nombre": "Nanni",
+          "descripcion": "Pan de papa, blend de carne 120g, doble cheddar ahumado, bacon crujiente, cebolla caramelizada, huevo frito, lechuga, salsa ViEmma",
+          "precios": {
+            "simple": 8000,
+            "doble": 11000,
+            "triple": 14000
+          },
+          "imagen": "assets/nani.webp"
+        },
+         {
+          "id": 305,
+          "nombre": "Fiore",
+          "descripcion": "Pan de papa, blend de carne 120g, doble mozzarella, pepinillos, cebolla caramelizada, huevo frito, lechuga, alioli",
+          "precios": {
+            "simple": 8000,
+            "doble": 10500,
+            "triple": 13500
+          },
+          "imagen": "assets/fiore.webp"
+        },
+        {
+          "id": 303,
+          "nombre": "Dani",
+          "descripcion": "Pan de papa, blend de carne 120g, doble queso dambo, cebolla caramelizada, huevo frito, tomate, lechuga, mayonesa de morrón",
+          "precios": {
+            "simple": 8000,
+            "doble": 10500,
+            "triple": 13500
+          },
+          "imagen": "assets/dani.webp"
+        },
+         {
+          "id": 302,
+          "nombre": "Curtida",
+          "descripcion": "Pan de papa, blend de carne 120g, doble queso dambo, pepinillos, aros de cebolla encurtidos, lechuga, salsa ViEmma",
+          "precios": {
+            "simple": 8000,
+            "doble": 10500,
+            "triple": 13500
+          },
+          "imagen": "assets/curtida.webp"
         }
       ]
     },
@@ -119,40 +119,18 @@
       "categoria": "Empanadas",
       "productos": [
         {
-          "id": 101,
-          "nombre": "4 quesos",
-          "descripcion": "Veggie",
-          "precio": 2500,
-          "precioMediaDocena": 13000,
-          "precioDocena": 24000,
-          "imagen": "assets/empanadas.webp"
+          "nombre": "Docena",
+          "descripcion": "Elegí hasta 12 sabores",
+          "imagen": "assets/empanadas.webp",
+          "precio": 24000,
+          "cantidadFija": 12
         },
         {
-          "id": 102,
-          "nombre": "Calabaza y roquefort",
-          "descripcion": "Veggie",
-          "precio": 2500,
-          "precioMediaDocena": 13000,
-          "precioDocena": 24000,
-          "imagen": "assets/empanadas.webp"
-        },
-        {
-          "id": 103,
-          "nombre": "Capresse",
-          "descripcion": "Veggie: Albahaca, tomate y queso",
-          "precio": 2500,
-          "precioMediaDocena": 13000,
-          "precioDocena": 24000,
-          "imagen": "assets/empanadas.webp"
-        },
-        {
-          "id": 104,
-          "nombre": "Carne",
-          "descripcion": "",
-          "precio": 2500,
-          "precioMediaDocena": 13000,
-          "precioDocena": 24000,
-          "imagen": "assets/empanadas.webp"
+          "nombre": "Media Docena",
+          "descripcion": "Elegí hasta 6 sabores",
+          "imagen": "assets/empanadas.webp",
+          "precio": 13000,
+          "cantidadFija": 6
         },
         {
           "id": 105,
@@ -164,17 +142,8 @@
           "imagen": "assets/empanadas.webp"
         },
         {
-          "id": 106,
-          "nombre": "Cebolla y queso",
-          "descripcion": "Veggie",
-          "precio": 2500,
-          "precioMediaDocena": 13000,
-          "precioDocena": 24000,
-          "imagen": "assets/empanadas.webp"
-        },
-        {
-          "id": 107,
-          "nombre": "Jamón y queso",
+          "id": 113,
+          "nombre": "Bondiola la barbacoa",
           "descripcion": "",
           "precio": 2500,
           "precioMediaDocena": 13000,
@@ -199,9 +168,27 @@
           "precioDocena": 24000,
           "imagen": "assets/empanadas.webp"
         },
+       {
+          "id": 104,
+          "nombre": "Carne",
+          "descripcion": "",
+          "precio": 2500,
+          "precioMediaDocena": 13000,
+          "precioDocena": 24000,
+          "imagen": "assets/empanadas.webp"
+        },
         {
           "id": 110,
           "nombre": "Salame y queso",
+          "descripcion": "",
+          "precio": 2500,
+          "precioMediaDocena": 13000,
+          "precioDocena": 24000,
+          "imagen": "assets/empanadas.webp"
+        },
+         {
+          "id": 107,
+          "nombre": "Jamón y queso",
           "descripcion": "",
           "precio": 2500,
           "precioMediaDocena": 13000,
@@ -218,9 +205,37 @@
           "imagen": "assets/empanadas.webp"
         },
         {
-          "id": 112,
-          "nombre": "Bondiola a la barbacoa",
-          "descripcion": "",
+          "id": 101,
+          "nombre": "4 quesos",
+          "descripcion": "Veggie (queso muzzarella, queso Dambo, queso Azul y queso parmesano)",
+          "precio": 2500,
+          "precioMediaDocena": 13000,
+          "precioDocena": 24000,
+          "imagen": "assets/empanadas.webp"
+        },
+
+        {
+          "id": 102,
+          "nombre": "Calabaza y roquefort",
+          "descripcion": "Veggie",
+          "precio": 2500,
+          "precioMediaDocena": 13000,
+          "precioDocena": 24000,
+          "imagen": "assets/empanadas.webp"
+        },
+        {
+          "id": 103,
+          "nombre": "Capresse",
+          "descripcion": "Albahaca, tomate y queso",
+          "precio": 2500,
+          "precioMediaDocena": 13000,
+          "precioDocena": 24000,
+          "imagen": "assets/empanadas.webp"
+        },
+        {
+          "id": 106,
+          "nombre": "Cebolla y queso",
+          "descripcion": "Veggie",
           "precio": 2500,
           "precioMediaDocena": 13000,
           "precioDocena": 24000,
@@ -232,6 +247,27 @@
     {
       "categoria": "Pizzas",
       "productos": [
+        {
+          "id": 206,
+          "nombre": "Mozzarella",
+          "descripcion": "",
+          "precio": 16000,
+          "imagen": "assets/pizza.webp"
+        },
+        {
+          "id": 205,
+          "nombre": "Especial",
+          "descripcion": "Jamón y queso",
+          "precio": 20000,
+          "imagen": "assets/pizza.webp"
+        },
+        {
+          "id": 204,
+          "nombre": "Cebollada",
+          "descripcion": "",
+          "precio": 18000,
+          "imagen": "assets/pizza.webp"
+        },
         {
           "id": 201,
           "nombre": "4 quesos",
@@ -254,24 +290,10 @@
           "imagen": "assets/pizza.webp"
         },
         {
-          "id": 204,
-          "nombre": "Cebollada",
+          "id": 209,
+          "nombre": "Parmesano y rúcula",
           "descripcion": "",
-          "precio": 18000,
-          "imagen": "assets/pizza.webp"
-        },
-        {
-          "id": 205,
-          "nombre": "Especial",
-          "descripcion": "Jamón y queso",
           "precio": 20000,
-          "imagen": "assets/pizza.webp"
-        },
-        {
-          "id": 206,
-          "nombre": "Mozzarella",
-          "descripcion": "",
-          "precio": 16000,
           "imagen": "assets/pizza.webp"
         },
         {
@@ -286,13 +308,6 @@
           "nombre": "Nevada",
           "descripcion": "Huevo duro",
           "precio": 18000,
-          "imagen": "assets/pizza.webp"
-        },
-        {
-          "id": 209,
-          "nombre": "Parmesano y rúcula",
-          "descripcion": "",
-          "precio": 20000,
           "imagen": "assets/pizza.webp"
         },
         {
