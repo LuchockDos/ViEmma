@@ -152,7 +152,7 @@ function abrirModal(producto, categoria) {
       carrito.push({ nombre: sabor, categoria, cantidad, tipo, precio, detalle: detalles });
       actualizarCarrito();
       actualizarBadge();
-      modal.classList.remove('show');
+      mostrarMensajeCarrito();
       return;
     }
 
@@ -169,7 +169,7 @@ function abrirModal(producto, categoria) {
 
     actualizarCarrito();
     actualizarBadge();
-    modal.classList.remove('show');
+    mostrarMensajeCarrito()
   };
 }
 
@@ -389,9 +389,9 @@ document.querySelector('.btn_finalizar').addEventListener('click', () => {
     mensaje += `\n`;
   }
 
-  mensaje += `Total: $${totalPrecio}\n`;
+  mensaje += `Total: $${totalPrecio} + $2000 Envío\n`;
   mensaje += `Dirección: ${direccion}\n`;
-  mensaje += `Pago: ${metodoPago} + 2000 si quiere envio\n `;
+  mensaje += `Pago: ${metodoPago}\n `;
   mensaje += `Verifique que esté dentro de la zona habilitada`;
 
   const tel = "5493425995955";
@@ -401,3 +401,16 @@ document.querySelector('.btn_finalizar').addEventListener('click', () => {
 const verify = document.getElementById('verify').addEventListener('click', () =>{
   modalCarrito.classList.remove('show')
 });
+
+function mostrarMensajeCarrito() {
+  const msg = document.getElementById("msgAddCart");
+  if (!msg) return;
+
+  msg.style.display = "block";
+  msg.style.opacity = "1";
+
+  setTimeout(() => {
+    msg.style.opacity = "0";
+    setTimeout(() => msg.style.display = "none", 300);
+  }, 500);
+}
