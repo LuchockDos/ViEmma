@@ -67,7 +67,6 @@
           🚨 Solo realizamos envíos dentro de la zona marcada en el siguiente
           mapa.
         </h2>
-        <!-- 🗺️ MAPA DE LA ZONA DE ENTREGA -->
         <div class="zona_mapa_container">
           <iframe
             src="https://www.google.com/maps/d/embed?mid=1yx0M3hjvhFeldpO-MuAnuYP2qfSijFc&hl=es"
@@ -94,7 +93,6 @@
       </div>
     </footer>
 
-    <!-- 🔹 MODAL PRODUCTO -->
     <div class="modal" id="modalProducto">
       <div class="modal_content">
         <div class="modal_left">
@@ -122,26 +120,19 @@
             </label>
           </form>
           <button class="btn_add_cart">Agregar al carrito</button>
-          <p id="msgAddCart" class="msg_add_cart">✅ Agregado al carrito</p>
         </div>
         <span class="modal_close">&times;</span>
       </div>
     </div>
-    <!-- ================= MODAL CARRITO ================= -->
     <div class="modal" id="modalCarrito">
       <div class="modal_content modal_carrito_content">
-        <!-- 🔹 Header -->
         <div class="modal_carrito_header">
           <h2 class="modal_title">Tu pedido</h2>
           <button class="modal_close" id="closeCarrito">&times;</button>
         </div>
 
-        <!-- 🔹 Body -->
-        <div class="modal_carrito_body" id="carritoItems">
-          <!-- Aquí se cargan los productos del carrito dinámicamente -->
-        </div>
+        <div class="modal_carrito_body" id="carritoItems"></div>
 
-        <!-- 🔹 Footer -->
         <div class="modal_carrito_footer">
           <form class="modal_envio_form">
             <p class="modal_label">Dirección de entrega:</p>
@@ -153,7 +144,6 @@
             />
           </form>
 
-          <!-- 🧾 Método de pago -->
           <form class="modal_pago_form">
             <p class="modal_label">Método de pago:</p>
             <label class="modal_radio_label">
@@ -166,10 +156,8 @@
             </label>
           </form>
 
-          <!-- 💰 Total -->
           <p class="modal_total">Total: <span id="totalCarrito">$0</span></p>
 
-          <!-- 🟡 Botón de finalizar -->
           <div class="verificar_zona">
             <p>
               Asegúrese de que su dirección esté dentro de la zona habilitada
@@ -181,6 +169,7 @@
         </div>
       </div>
     </div>
+    <div class="toastMsg" id="toastMsg"></div>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
