@@ -87,6 +87,7 @@ html {
   display: grid;
   gap: 10px;
   place-items: center;
+  margin-top: 50px;
 }
 .logo {
   width: 200px;

@@ -41,7 +41,6 @@ function renderProductos() {
         1 a 5 unidades → $2500 c/u<br>
         6 unidades → $13000<br>
         12 unidades → $24000<br>
-        +12 → $2500 c/u (podés combinar gustos)
       `;
       section.appendChild(aviso);
     }
