@@ -77,8 +77,9 @@ html {
 /*Info ViEmma*/
 .article_info_viemma {
   width: 100%;
+  height: auto;
+  min-height: 100vh;
   margin-top: 50px;
-  height: 100vh;
   display: grid;
   place-items: center;
   background: linear-gradient(180deg, #0a0a0a 0%, #1c1c1c 50%, #c5a253 100%);
