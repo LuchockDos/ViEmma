@@ -252,70 +252,70 @@
           "nombre": "Mozzarella",
           "descripcion": "",
           "precio": 16000,
-          "imagen": "assets/pizza.webp"
+          "imagen": "assets/mozzarella.webp"
         },
         {
           "id": 205,
           "nombre": "Especial",
           "descripcion": "Jamón y queso",
           "precio": 20000,
-          "imagen": "assets/pizza.webp"
+          "imagen": "assets/especial.webp"
         },
         {
           "id": 204,
           "nombre": "Cebollada",
           "descripcion": "",
           "precio": 18000,
-          "imagen": "assets/pizza.webp"
+          "imagen": "assets/mozzarella.webp"
         },
         {
           "id": 201,
           "nombre": "4 quesos",
           "descripcion": "Azul, mozzarella, parmesano y tybo",
           "precio": 22000,
-          "imagen": "assets/pizza.webp"
+          "imagen": "assets/4quesos.webp"
         },
         {
           "id": 202,
           "nombre": "Calabresa",
           "descripcion": "Milán ahumado",
           "precio": 20000,
-          "imagen": "assets/pizza.webp"
+          "imagen": "assets/calabresa.webp"
         },
         {
           "id": 203,
           "nombre": "Capresse",
           "descripcion": "Albahaca y tomate",
           "precio": 20000,
-          "imagen": "assets/pizza.webp"
+          "imagen": "assets/capresse.webp"
         },
         {
           "id": 209,
           "nombre": "Parmesano y rúcula",
           "descripcion": "",
           "precio": 20000,
-          "imagen": "assets/pizza.webp"
+          "imagen": "assets/parmesano.webp"
         },
         {
           "id": 207,
           "nombre": "Napolitana",
           "descripcion": "Tomate",
           "precio": 18000,
-          "imagen": "assets/pizza.webp"
+          "imagen": "assets/napolitana.webp"
         },
         {
           "id": 208,
           "nombre": "Nevada",
           "descripcion": "Huevo duro",
           "precio": 18000,
-          "imagen": "assets/pizza.webp"
+          "imagen": "assets/nevada.webp"
         },
         {
           "id": 210,
           "nombre": "Provenzal",
           "descripcion": "Ajo y perejil",
           "precio": 18000,
-          "imagen": "assets/pizza.webp"
+          "imagen": "assets/mozzarella.webp"
         }
       ]
     }
